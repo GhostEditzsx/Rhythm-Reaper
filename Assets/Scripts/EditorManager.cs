@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class EditorManager : MonoBehaviour
@@ -14,5 +15,17 @@ public class EditorManager : MonoBehaviour
         );
 
         timeline.Refresh(noteEditor.chart);
+    }
+
+    public AudioController AudioController;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            {
+                AudioController.Pause();
+            }
+        }
     }
 }

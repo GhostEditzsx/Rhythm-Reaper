@@ -6,6 +6,13 @@ public class AudioController : MonoBehaviour
 
     public float CurrentTime => audioSource.time;
 
-    public void Play() => audioSource.Play();
-    public void Pause() => audioSource.Pause();
+    public void Play()
+    {
+        audioSource.Play();
+    }
+
+    public void Pause()
+    {
+        audioSource.Pause();
+    }
 }
