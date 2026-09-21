@@ -10,9 +10,4 @@ public class AudioController : MonoBehaviour
     {
         audioSource.Play();
     }
-
-    public void Pause()
-    {
-        audioSource.Pause();
-    }
 }

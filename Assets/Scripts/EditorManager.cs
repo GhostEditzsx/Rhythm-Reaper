@@ -1,4 +1,5 @@
-using UnityEditor.Experimental.GraphView;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class EditorManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class EditorManager : MonoBehaviour
     public NoteEditor noteEditor;
     public TimelineController timeline;
 
+    public TMP_Text timeText;
+
     public void PlaceNote(int lane)
     {
         noteEditor.AddNote(
@@ -14,18 +17,26 @@ public class EditorManager : MonoBehaviour
             lane
         );
 
-        timeline.Refresh(noteEditor.chart);
-    }
+        
 
-    public AudioController AudioController;
+        if (timeline != null)
+        {
+            timeline.Refresh(noteEditor.chart);
+        }
+    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            {
-                AudioController.Pause();
-            }
+            audioController.Play();
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlaceNote(0);
+        }
+
+        timeText.text = audioController.CurrentTime.ToString("F2") + " sec";
     }
 }
