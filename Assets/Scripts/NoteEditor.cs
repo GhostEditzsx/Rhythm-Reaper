@@ -12,6 +12,6 @@ public class NoteEditor : MonoBehaviour
             lane = lane
         });
 
-        Debug.Log($"Added note at time {time} in lane {lane}");
+        
     }
 }
